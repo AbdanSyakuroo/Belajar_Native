@@ -1,101 +1,75 @@
-import { StyleSheet, Image, Platform } from 'react-native';
-
+import { StyleSheet, Image, Platform, View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import tw from "twrnc";
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { AntDesign, Entypo, FontAwesome, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
+
 
 export default function TabTwoScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <SafeAreaView>
+      <ScrollView>
+          <View style={tw`p-10 items-center`}>
+             <Image source={require('../../assets/images/smk.webp')} style={tw`h-50 w-50 rounded-full border`} />
+             <Text style={tw`text-2xl font-semibold mt-2`}>SMK Pesat IT XPRO</Text>
+             <Text style={tw`w-3/4 text-center text-slate-400 mt-1 font-semibold`}>"Sekolah Umum Berbasis Agama Pilihan Siswa/i Terbaik"</Text>
+             
+              <View style={tw`flex-row gap-5 mt-5`}>
+            <Entypo style={tw`text-xl text-red-500 bg-slate-200 rounded-full p-2 px-3 `} name='youtube'/>
+            <Entypo style={tw`text-xl text-blue-500 bg-slate-200 rounded-full p-2 px-3 `} name='twitter'/>
+            <Entypo style={tw`text-xl text-rose-500 bg-slate-200 rounded-full p-2 px-3 `} name='instagram'/>
+            <Entypo style={tw`text-xl text-blue-500 bg-slate-200 rounded-full p-2 px-3 `} name='linkedin'/>
+          </View>
+          </View>
+
+          <View style={tw`flex-row justify-around`}>
+              <View style={tw``}>
+                  <Text style={tw`font-black text-2xl`}>111</Text>
+                  <Text style={tw`text-lg text-center`}>RPL</Text>
+              </View>
+              <View style ={tw``}>
+              <Text style={tw`font-black text-2xl`}>120</Text>
+              <Text style={tw`text-lg text-center`}>DKV</Text>
+              </View>
+              <View style={tw``}>
+              <Text style={tw`font-black text-2xl`}>150</Text>
+                  <Text style={tw`text-lg text-center`}>TKJ</Text>
+              </View>
+            </View>
+
+          <View style={tw`flex-row gap-3 mt-4 justify-center px-8`}>
+         <Link href="/explore/project" style={tw`border-blue-700 border py-3 mt-5 rounded w-1/2`}> 
+          <Text style={tw`text-blue-700  font-semibold text-center `}>Projek</Text>
+          </Link>
+          <Link href="/explore/students" style={tw`bg-blue-700 border-blue-700 border py-3 mt-5 w-1/2 rounded`}> 
+          <Text style={tw`text-white  font-semibold text-center rounded`}>Siswa</Text>
+          </Link>  
+          </View>
+         
+         <View style={tw`mt-8 flex-row gap-3 justify-center px-8 mt-10`}>
+              <Image source={require('../../assets/images/bw.webp')} style={tw`h-30 rounded w-1/3`}/>
+              <Image source={require('../../assets/images/ABB.webp')} style={tw`h-30 rounded w-1/3`}/>
+              <Image source={require('../../assets/images/bro.webp')} style={tw`h-30 rounded w-1/3`}/>
+         </View>
+         <View style={tw`mt-8 flex-row gap-3 justify-center px-8 pb-10`}>
+              <Image source={require('../../assets/images/ldk.webp')} style={tw`h-30 rounded w-1/3`}/>
+              <Image source={require('../../assets/images/semi.webp')} style={tw`h-30 rounded w-1/3`}/>
+              <Image source={require('../../assets/images/serti.webp')} style={tw`h-30 rounded w-1/3`}/>
+         </View>
+
+         
+    </ScrollView>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+const css = StyleSheet.create({
   headerImage: {
     color: '#808080',
     bottom: -90,
@@ -105,5 +79,24 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  reactLogo: {
+    height: 80,
+    width: 80,
+    borderRadius: 100,
+    marginBottom: 12,
+  },
+  icon: {
+    height: 75,
+    width: 75,
+    borderRadius: 100,
+    backgroundColor: "#69247C",
+    marginVertical: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingStart: 1
+  },
+  baris: {
+    display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, flexBasis: '48%'
   },
 });

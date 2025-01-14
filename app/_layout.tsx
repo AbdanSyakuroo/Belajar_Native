@@ -32,6 +32,11 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name="settings/profile" options={{ headerShown: false }}/>
+        <Stack.Screen name="explore/project" options={{ headerTitle : "Projek Siswa" }}/>
+        <Stack.Screen name="explore/project1" options={{ headerTitle : "Detail Projek" }}/>
+        <Stack.Screen name="explore/students" options={{ headerTitle : "Daftar Siswa" }}/>
+        <Stack.Screen name="explore/students1" options={{ headerTitle : "Detail Siswa" }}/>
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

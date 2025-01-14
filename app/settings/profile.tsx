@@ -19,7 +19,7 @@ export default function HomeScreen() {
 
           <View style={tw`bg-white h-full rounded-t-[10] bottom-11 w-full p-12`}>
             <Text style={tw`text-4xl font-extrabold w-1/2`}>
-              Abdan Syakuro
+              Abdan Syakuro 2
             </Text>
             <View style={tw`flex-row w-3/4 gap-6 items-center`}>
               <Text style={tw`mt-1 text-slate-800 text-lg font-semibold`}>
@@ -44,8 +44,8 @@ export default function HomeScreen() {
               </View>
             </View>
             <View>
-              <Link href="/settings/profile" style={tw`bg-black p-3 rounded-md w-25 mt-5`}>
-              <Text style={tw` text-white  font-semibold text-center`}>Hire Me</Text></Link>
+              
+              <Text style={tw` text-white  font-semibold text-center`}>Hire Me</Text>
             </View>
 
             <View style={tw`flex-row w-25 justify-between my-7`}>
